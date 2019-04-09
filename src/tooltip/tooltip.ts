@@ -1,6 +1,6 @@
 import {
   AfterContentInit, Component, ContentChild, ElementRef, Input,
-  Renderer2, TemplateRef, ViewChild,
+  Renderer2, TemplateRef, ViewChild, Injectable
 } from '@angular/core'
 import { fadeAnimation } from '../shared/animation'
 import { WindowWrapper } from '../shared/services'
@@ -23,6 +23,8 @@ export type Shape = { width: number, height: number }
   `,
   animations: [fadeAnimation],
 })
+
+@Injectable()
 export class ElTooltip implements AfterContentInit {
   
   @Input() set disabled(val: boolean) {   // todo, is discarded.
